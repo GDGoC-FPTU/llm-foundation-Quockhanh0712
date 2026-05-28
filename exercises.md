@@ -37,10 +37,10 @@ Gọi `call_openai` với các giá trị temperature 0.0, 0.5, 1.0 và 1.5 sử
 Xem xét kịch bản: 10.000 người dùng hoạt động mỗi ngày, mỗi người thực hiện 3 lần gọi API, mỗi lần trung bình ~350 token.
 
 **Ước tính xem GPT-4o đắt hơn GPT-4o-mini bao nhiêu lần cho workload này:**
-> GPT-4o đắt hơn GPT-4o-mini khoảng 33 lần (dựa trên giá input $5.00 vs $0.15 trên 1 triệu token). Đối với workload 10.5 triệu token mỗi ngày, chi phí sẽ chênh lệch rất lớn.
+> Workload mỗi ngày: 10.000 users × 3 calls/user × 350 tokens/call = 10.500.000 tokens/day ,Tổng cộng khoảng 10.5 triệu token/ngày. Nếu tính theo input token:GPT-4o:      10.5 × $2.50 = $26.25/ngày ,GPT-4o-mini: 10.5 × $0.15 = $1.575/ngày ,Tỉ lệ chênh lệch: 2.50 / 0.15 ≈ 16.7 lần . Nếu tính theo output token: 10.00 / 0.60 ≈ 16.7 lần .Vì vậy, có thể ước tính GPT-4o đắt hơn GPT-4o-mini khoảng 16–17 lần cho workload tương tự, tùy tỉ lệ input/output thực tế.
 
 **Mô tả một trường hợp mà chi phí cao hơn của GPT-4o là xứng đáng, và một trường hợp GPT-4o-mini là lựa chọn tốt hơn:**
-> GPT-4o xứng đáng khi cần giải quyết các bài toán suy luận logic phức tạp, viết mã nguồn chuyên sâu hoặc phân tích các tài liệu học thuật đòi hỏi độ thông minh cao. GPT-4o-mini tốt hơn cho các tác vụ lặp đi lặp lại như phân loại email, tóm tắt ý chính đơn giản hoặc chatbot trả lời các câu hỏi thường gặp (FAQ) với quy mô hàng triệu request.
+> GPT-4o-mini phù hợp hơn cho các tác vụ đơn giản, lặp lại nhiều và cần tối ưu chi phí, ví dụ: chatbot FAQ, phân loại email, tóm tắt ngắn, gắn nhãn dữ liệu hoặc xử lý request số lượng lớn.
 
 ---
 
